@@ -4,14 +4,21 @@
       <Logo class="card-logo" />
       <div class="card-content">
         <div class="form-section">
-          <h1 aria-label="section-subtitile">
+          <h1 role="title" aria-label="section-subtitle">
             Welcome to the payment section!
           </h1>
 
           <div class="form-container">
             <form class="form">
               <Field class="owner-field" label="Owner" />
-              <Field class="card-field" label="Card" />
+              <div class="card-container">
+                <Field class="card-field" label="Card" />
+                <img
+                  class="card-image"
+                  alt="card"
+                  src="../assets/imgs/Cards.png"
+                />
+              </div>
               <div class="expiry-cvc">
                 <Field class="expiry-field" label="Expiry" />
                 <Field class="cvc-field" label="CVC" />
@@ -19,6 +26,8 @@
             </form>
           </div>
         </div>
+
+        <hr class="section-separator" />
 
         <div class="summary-section">
           <div class="summary-container">
@@ -104,9 +113,15 @@ export default {
               font-size: 0.75em
         .owner-field
           margin-right: 0px
-        .card-field
-          margin-right: 0px
-          width: 60%
+        .card-container
+          display: flex
+          .card-field
+            margin-right: 0px
+            width: 60%
+          .card-image
+            margin-left: 20px
+            width: 90px
+            height: 90px
         .expiry-cvc
           display: flex
         .expiry-field, .cvc-field
@@ -154,6 +169,8 @@ export default {
         height: 40px
     .steps-indicators
       padding-top: 5px
+    .section-separator
+      display: none
 
 
 // background-size: 400% 400%
@@ -170,6 +187,18 @@ export default {
     padding: 50px 140px
     .card
       padding: 0px 35px
+      .card-content
+        .form
+          .card-container
+            display: flex
+            .card-field
+              margin-right: 0px
+              margin-bottom: 0px
+              width: 60%
+            .card-image
+              margin-left: 20px
+              width: 100px
+              height: 100px
 
 @media only screen and (min-width: 1000px)
   #layout
@@ -179,23 +208,38 @@ export default {
         display: flex
         justify-content: space-between
         .form-section
-          padding-right: 10px
           .form
             margin-top: 15px
+            width: 100%
             .owner-field
-              width: 65%
-            .card-field
-              width: 65%
-              margin-right: 0px
-            .expiry-cvc
-              display: flex
+              width: 100%
+            .card-container
+              width: 400px
+              .card-field
+                margin-right: 0px
+                margin-bottom: 0px
+              .card-image
+                margin-left: 40px
+                width: 140px
+                height: 140px
             .expiry-field, .cvc-field
-              width: calc(34.5% - 15px)
-        .summary-section
-          padding-left: 10px
+              width: 120px
+              position: absolute
+              top: 220px
+            .cvc-field
+              left: 190px
       .steps-indicators
         position: absolute
         top: -85px
         width: 1050px
         left: calc(50% - 525px)
+      .summary-container
+        padding-left: 20px
+        border-top: none
+      .section-separator
+        display: block
+        width: 0.5px
+        height: 265px
+        background-color: #000
+        margin: 0px
 </style>

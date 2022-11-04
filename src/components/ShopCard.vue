@@ -24,7 +24,7 @@ export default {};
     padding: 12px 10px
     border-radius: 10px
     justify-content: space-between
-    overflow: hidden
+    // overflow: hidden
     .sc-details
       .d-title
         text-align: center
